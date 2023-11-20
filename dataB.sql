@@ -7,3 +7,13 @@ WHERE isActive = 1
 SELECT * FROM people
 WHERE age > 50 
 ORDER BY age DESC
+
+-- вернуть все столбцы учащихся кто не оплатил обучение
+SELECT *
+FROM students
+WHERE tuition_received = false
+
+--вернуть таблицу mod, выходными значениями которой являются number1 и number2
+--https://www.codewars.com/kata/594a9592704e4d21bc000131/train/sql
+SELECT mod(number1, number2) AS mod
+FROM decimals;

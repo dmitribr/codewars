@@ -39,3 +39,80 @@ function goodVsEvil(good, evil){
    if (goodPoints === evilPoints) return 'Battle Result: No victor on this battle field';
     return goodPoints < evilPoints ?  "Battle Result: Evil eradicates all trace of Good" :"Battle Result: Good triumphs over Evil";
 }
+
+//узнать колчисетво палиндромов от числа a до b (no test)
+function countPalindromes(a, b){
+    let sum = 0;
+    a = Math.ceil(a);
+    b = Math.floor(b);
+    if ((b - a) < 0) {
+        return 0;
+    } for (let i = a ; i <= b ; i++) {
+        if (i === Number(String(i).split('').reverse().join(''))) {
+            sum++;
+        }
+    }
+    console.log(sum);
+  }
+  countPalindromes(0, 3);
+
+//перевернуть строку, и каждое слово отдельно, преобразовать верхний регистр в нижний и наоборот.
+//https://www.codewars.com/kata/5878520d52628a092f0002d0/train/javascript
+function stringTransformer(str) {
+    let revArr = str.split(' ').reverse();
+    for (let i = 0 ; i < revArr.length ; i++) {
+            revArr[i] = revArr[i].split('').reverse();
+        for (let j = 0; j < revArr[i].length ; j++) {
+            if (revArr[i][j] === revArr[i][j].toUpperCase()) {
+                revArr[i][j] = revArr[i][j].toLowerCase();
+               } else {
+                revArr[i][j] = revArr[i][j].toUpperCase();
+               }   
+            } revArr[i] = revArr[i].join('');
+        }console.log(revArr.join(' '));
+    }
+
+
+stringTransformer('Example string');
+
+//переместить все нули в конец массива
+//https://www.codewars.com/kata/52597aa56021e91c93000cb0/train/javascript
+//решение.
+function moveZeros(arr) {
+    for (let i = 0 ; i < arr.length; i++) {
+        if (arr[i] === 0) {
+            arr.push(arr[i]);
+            arr.splice(i, 1);
+        } 
+    }console.log(arr);
+}
+moveZeros([0, 3, 4, +0, 'f', 55, 0, 4, 7]);
+
+//решение на гитхабе
+// var moveZeros = function (arr) {
+//   for(var i = arr.length; i--;) {
+//     if(arr[i]===0) {
+//       arr.splice(i, 1);
+//       arr.push(0);
+//     }
+//   } return arr;
+// }
+
+//Определить является ли год високосным
+//https://www.codewars.com/kata/526c7363236867513f0005ca/train/javascript
+function isLeapYear(year) {
+    if(year % 400 === 0 || year % 4 === 0 && year % 100 !== 0){
+      return true;
+    }
+    return false;
+  }
+
+//Перемешать 2 массива
+//https://www.codewars.com/kata/582642b1083e12521f0000da/train/javascript
+function arrayMash (array1, array2) {
+    let result = [];
+    for (let i = 0 ; i < array1.length ; i++) {
+        result.push(array1[i], array2[i]);
+    } console.log(result);
+}
+arrayMash([1, 2, 3, 4], ['a', 'b', 'c', 'd']);
