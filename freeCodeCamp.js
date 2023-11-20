@@ -12,3 +12,25 @@ function palindrome(str) {
 }
 
 palindrome('fdDDgf    fd $%^7 f g');
+
+function telephoneCheck(str) {
+    str = str.replace(/[^0-9]/g, '').split('');
+    if (str.length === 10) {
+
+    }
+    return true;
+  }
+  
+  telephoneCheck("555-555-5555");
+str = str.replace(/[^0-9]/g, '');
+
+
+//вернуть сумму массива
+function sumAll(arr) {
+    for (let key of arr) {
+        
+    }
+    return 1;
+  }
+  
+  sumAll([1, 4]);
