@@ -116,3 +116,67 @@ function arrayMash (array1, array2) {
     } console.log(result);
 }
 arrayMash([1, 2, 3, 4], ['a', 'b', 'c', 'd']);
+
+//вернуть отрицательное число
+//https://www.codewars.com/kata/55685cd7ad70877c23000102/train/javascript
+function makeNegative(num) {
+    if (num === 0) {
+      return 0;
+    } return -(Math.abs(num));
+  }
+
+//вернуть массив только с числами.
+//https://www.codewars.com/kata/53dbd5315a3c69eed20002dd/train/javascript
+function filter_list(l) {
+    let ret = [];
+    for (let i = 0 ; i < l.length ; i++){
+        if (typeof(l[i]) === 'number') {
+                ret.push(l[i]);
+            } 
+    } console.log(ret);
+  }
+
+// рассортировать массив от большего к меньшому
+  let g = [
+    {"a": 1, "b": 3},
+    {"a": 3, "b": 2},
+    {"a": 2, "b": 40},
+    {"a": 4, "b": 12}
+  ];
+  function sortList (sortBy, list) {
+        
+    list.sort(function(a, b) {
+        return b[sortBy] - a[sortBy];
+    });
+            
+    return list;
+  
+  }
+  console.log(sortList('a', g));
+
+//рассчитать высоту экрана
+//https://www.codewars.com/kata/5bbd279c8f8bbd5ee500000f/train/javascript
+  function findScreenHeight(width, ratio) {
+    let height = width / ratio.split(':')[0] * ratio.split(':')[1];
+    return `${width}x${height}`;
+}
+console.log(findScreenHeight(1240, '4:3'));
+
+//Слово с заглавной буквой поставить в начала строки
+//https://www.codewars.com/kata/5785cd91a1b8d5c06e000007/train/javascript
+function reOrdering(text){
+  const mas = text.split(' ');
+  for (let i = 0 ; i < mas.length ; i++) {
+      for (let key of mas[i]) {
+          if (key === key.toUpperCase()) {
+              mas.unshift(mas[i]);
+              mas.splice((i + 1), 1);
+
+              return mas.join(' ');
+          } 
+      }
+  }
+}
+
+const hr = 'hi my name Gred is';
+console.log(reOrdering(hr));
