@@ -17,3 +17,15 @@ WHERE tuition_received = false
 --https://www.codewars.com/kata/594a9592704e4d21bc000131/train/sql
 SELECT mod(number1, number2) AS mod
 FROM decimals;
+
+--вернуть ту же таблицу. где все значения race являются строчными символами
+--https://www.codewars.com/kata/594800ba6fb152624300006d/train/sql
+SELECT id, name, birthday, LOWER (race) AS race
+FROM demographics;
+
+--подсчитать число одинаковых race строк и вернуть в порядке убывания
+--https://www.codewars.com/kata/594633020a561e329a0000a2/train/sql
+SELECT race, COUNT(race) AS count1
+FROM demographics     
+GROUP BY race
+ORDER BY count1 DESC;
