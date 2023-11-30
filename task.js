@@ -180,3 +180,15 @@ function reOrdering(text){
 
 const hr = 'hi my name Gred is';
 console.log(reOrdering(hr));
+
+//разбить строку на элементы в массив по 2 символа
+//https://www.codewars.com/kata/515de9ae9dcfc28eb6000001/train/javascript
+function solution(str){
+  let arr = str.split('');
+  let fin = [];
+  for (let i = 0 ; i < arr.length ; i += 2) {
+      fin.push(arr[i] + (arr[i + 1] || '_'));
+ }
+ console.log(fin);
+}
+solution('dffdg');
